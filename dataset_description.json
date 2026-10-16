@@ -1,5 +1,5 @@
 {
-  "Name": "Wang-2026-localizing-10.1109/tnsre.2026.3702844",
+  "Name": "DRE-LZSH: SEEG benchmark dataset for drug-resistant epilepsy (ictal and interictal segments, 29 patients)",
   "BIDSVersion": "1.10.0",
   "DatasetType": "raw",
   "License": "CC-BY-4.0",
@@ -41,5 +41,5 @@
       "CodeURL": "n/a"
     }
   ],
-  "Version": "1.0.1"
+  "Version": "1.0.2"
 }

@@ -1,7 +1,7 @@
 {
   "version": "2.0",
   "pipeline_stage": "validated",
-  "title": "Wang-2026-localizing-10.1109/tnsre.2026.3702844",
+  "title": "DRE-LZSH: SEEG benchmark dataset for drug-resistant epilepsy (ictal and interictal segments, 29 patients)",
   "description": "Stereo-EEG (SEEG) recordings from 29 patients with drug-resistant epilepsy, comprising ictal and interictal segments together with clinical information and channel-level epileptogenic-zone annotations. The data are a lossless iEEG-BIDS re-packaging of the DRE-LZSH benchmark release (Zenodo 17272689), sampled at 2000 Hz, and are described by the associated TNSRE paper (doi:10.1109/TNSRE.2026.3702844). Authors' derived results (HFO rates, 1/f spectral fits) and analysis code are included. Caveat: the P014 epileptogenic-zone and deleted-channel annotations in the release appear to be a copy of the P007 row (several channel numbers exceed P014's channel count) and should not be used without confirmation from the authors.",
   "methods_description": "SEEG segments recorded at 2000 Hz, covering seizure (typically 40-60 s) and longer interictal segments. MATLAB arrays from the original release were converted to BrainVision float32 with BIDS sidecars, with no filtering, resampling, re-referencing or channel removal. Electrode coordinates are not available.",
   "license": "CC-BY-4.0",
@@ -105,5 +105,5 @@
     ".xlsx",
     ".yml"
   ],
-  "source_hash": "3869d9c2d0834d9c9fab0bb5dbc1d3232d1bc8b6762b70dc3e89ca6a19214eb4"
+  "source_hash": "2160900e7b31da486281d3cfcea3ff8f91f2ba63833d3e75f38b4682714604dd"
 }
