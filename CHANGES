@@ -1,3 +1,5 @@
+1.0.3 2026-10-21
+  - channels.tsv units: V for SEEG/EEG/ECG (from the release's MNE-based code and PSD tables); README and channels.json updated.
 1.0.2 2026-10-16
   - Restore the descriptive Name from v1.0.0 after the v1.0.1 naming regression.
 1.0.0 2026-10-08

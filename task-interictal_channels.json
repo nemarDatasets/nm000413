@@ -1,4 +1,4 @@
 {
-  "units": {"Description": "Not stated in the release (written as n/a; BrainVision header 'unscaled'). The stored values have median absolute amplitudes of about 3e-5 to 2e-4, consistent with volts, but the release does not say so."},
+  "units": {"Description": "V for SEEG, EEG and ECG: the release code reads the source EDFs with MNE (get_data, volts) and its PSD tables agree with the stored values in scale (per-participant median band-power ratio 0.0008-4.5 over ictal and interictal runs; µV would give about 1e12). MISC: n/a (not stated). The BrainVision headers keep 'unscaled', which readers apply as a factor of 1."},
   "type": {"Description": "SEEG for names 'POL <electrode letters><contact number>' (Nihon Kohden-style export names, kept verbatim) except 'POL Fp<n>'; EEG for 'EEG ...-Ref' and 'POL Fp<n>' (scalp electrodes); ECG for names containing ECG/EKG; MISC otherwise (e.g. 'POL E', 'POL A5A6-0', 'POL L', 'POL R'). Types are inferred from the names; the release does not list channel types."}
 }
