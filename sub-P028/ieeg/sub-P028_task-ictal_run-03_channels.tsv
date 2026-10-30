@@ -73,8 +73,8 @@ POL F'7	SEEG	V	n/a	n/a	2000.0	n/a	n/a
 POL F'8	SEEG	V	n/a	n/a	2000.0	n/a	n/a
 POL F'9	SEEG	V	n/a	n/a	2000.0	n/a	n/a
 POL F'10	SEEG	V	n/a	n/a	2000.0	n/a	n/a
-EEG A1-Ref	EEG	V	n/a	n/a	2000.0	n/a	n/a
-EEG A2-Ref	EEG	V	n/a	n/a	2000.0	n/a	n/a
+EEG A1-Ref	SEEG	V	n/a	n/a	2000.0	n/a	n/a
+EEG A2-Ref	SEEG	V	n/a	n/a	2000.0	n/a	n/a
 POL A3	SEEG	V	n/a	n/a	2000.0	n/a	n/a
 POL A4	SEEG	V	n/a	n/a	2000.0	n/a	n/a
 POL A5	SEEG	V	n/a	n/a	2000.0	n/a	n/a

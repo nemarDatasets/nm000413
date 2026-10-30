@@ -26,7 +26,8 @@ not mapped onto `channels.tsv`.
   `sz4-1`). `sub-<P>/sub-<P>_scans.tsv` gives the source file of every run. The release does not document where an
   ictal segment starts relative to seizure onset, so there are no events.
 - 2000 Hz. Channel names are kept verbatim from the export (`POL A'1`, `EEG C3-Ref`, `POL ECG`, ...). Types are
-  inferred from the names (SEEG, EEG for the scalp channels, ECG, MISC; see `task-*_channels.json`). Units: volts
+  inferred from the names (SEEG, EEG for the scalp channels, ECG, MISC; see `task-*_channels.json` and the section
+  "Channel types of depth contacts on scalp slots" below). Units: volts
   for SEEG/EEG/ECG (MISC left `n/a`). The release's own code (`code/dre-lzsh-release/1f code`) reads the Nihon Kohden
   EDFs with MNE (`raw.get_data()`, volts), and its per-channel PSD tables (`derivatives/dre-lzsh-results/1f -results`)
   agree with the stored values in scale. Per-participant median band-power ratio (stored / table): 0.80-2.03 for the
@@ -46,6 +47,26 @@ not mapped onto `channels.tsv`.
 - `sourcedata/zenodo-17272689/DRE-LZSH/`: the original `.mat` files and the two information-list spreadsheets. The only
   change is that the MATLAB header text "Created on" (file export date, April and June 2025) has its weekday and day
   masked. The provenance JSON gives the SHA-256 of each file before and after masking.
+
+## Channel types of depth contacts on scalp slots (corrected in fix-20261030, Oct 2026)
+
+Up to version 1.0.2, every `EEG <name>-Ref` channel was typed EEG and every `POL E<n>` channel MISC. In the released
+channel lists many of them are SEEG depth contacts that the Nihon Kohden export placed on its scalp/system input slots:
+the shaft numbering continues across the two name forms within the same file. They are now typed SEEG (1,914 rows in
+106 `channels.tsv`; the SEEG/EEG/MISC counts in the matching `*_ieeg.json` were updated):
+- `EEG A1-Ref`, `EEG A2-Ref` followed by `POL A3` ... (A shaft), `EEG C1-Ref` ... `EEG C6-Ref` followed by `POL C7` ...,
+  `EEG F1-Ref` ... `EEG F10-Ref` followed by `POL F11` ..., and in P029 `EEG Tp7-Ref` ... `EEG Tp10-Ref` between
+  `POL Tp6` and `POL Tp11`;
+- P029 `EEG Fp1-Ref`, `EEG Fp2-Ref`, `POL Fp3` ... `POL Fp12`: one 12-contact shaft (no scalp position Fp3 or above exists);
+- P010 and P020 `EEG F1-Ref` ... `EEG F8-Ref` / `EEG F10-Ref`: the files have shafts A-D and G-I, and F is missing in between;
+- `POL E1` ... `POL E<N>` (contacts numbered 1..N without gaps, files without another E shaft): shaft E between D and F.
+`POL E` without a number (the Nihon Kohden system reference input), `POL DC<n>`, `POL A5A6-0`, `POL L`/`POL R` and the
+irregular P007 `POL E1`, `POL E2`, `POL E3-0` ... `POL E16` stay MISC. The release does not list channel types; these
+types follow the names and their numbering in each released file. Every changed row, with the rule applied, is in
+`code/fix-20261030_retype_log.tsv` (script `code/fix-20261030_retype.py`). Signal files are unchanged.
+
+The release's EZ and deleted-channel numbers (`participants.tsv`) are not mapped onto `channels.tsv`: as stated above, the
+release does not say which channel order they index, and some exceed the number of channels in a file.
 
 ## License
 
