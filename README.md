@@ -46,3 +46,24 @@ not mapped onto `channels.tsv`.
 ## License
 
 CC-BY-4.0
+
+## Channel types of depth contacts on scalp slots (corrected in fix-20261030, Oct 2026)
+
+Up to version 1.0.2, every `EEG <name>-Ref` channel was typed EEG and every `POL E<n>` channel MISC. In the released
+channel lists many of them are SEEG depth contacts that the Nihon Kohden export placed on its scalp/system input slots:
+the shaft numbering continues across the two name forms within the same file. They are now typed SEEG (2,008 rows in
+106 `channels.tsv`; the SEEG/EEG/MISC counts in the matching `*_ieeg.json` were updated):
+- `EEG A1-Ref`, `EEG A2-Ref` followed by `POL A3` ... (A shaft), `EEG C1-Ref` ... `EEG C6-Ref` followed by `POL C7` ...,
+  `EEG F1-Ref` ... `EEG F10-Ref` followed by `POL F11` ..., and in P029 `EEG Tp7-Ref` ... `EEG Tp10-Ref` between
+  `POL Tp6` and `POL Tp11`;
+- P029 `EEG Fp1-Ref`, `EEG Fp2-Ref`, `POL Fp3` ... `POL Fp12`: one 12-contact shaft (no scalp position Fp3 or above exists);
+- P010 and P020 `EEG F1-Ref` ... `EEG F8-Ref` / `EEG F10-Ref`: the files have shafts A-D and G-I, and F is missing in between;
+- `POL E1` ... `POL E<N>` (contacts numbered 1..N without gaps, files without another E shaft): shaft E between D and F.
+`POL E` without a number (the Nihon Kohden system reference input), `POL DC<n>`, `POL A5A6-0`, `POL L`/`POL R` and the
+irregular P007 `POL E1`, `POL E2`, `POL E3-0` ... `POL E16` stay MISC. The release does not list channel types; these
+types follow the names and their numbering in each released file. Every changed row, with the rule applied, is in
+`code/fix-20261030_retype_log.tsv` (script `code/fix-20261030_retype.py`). Signal files are unchanged.
+
+The release's EZ and deleted-channel numbers (`participants.tsv`) are not mapped onto `channels.tsv`: as stated above, the
+release does not say which channel order they index, and some exceed the number of channels in a file.
+
