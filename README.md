@@ -26,13 +26,8 @@ not mapped onto `channels.tsv`.
   `sz4-1`). `sub-<P>/sub-<P>_scans.tsv` gives the source file of every run. The release does not document where an
   ictal segment starts relative to seizure onset, so there are no events.
 - 2000 Hz. Channel names are kept verbatim from the export (`POL A'1`, `EEG C3-Ref`, `POL ECG`, ...). Types are
-  inferred from the names (SEEG, EEG for the scalp channels, ECG, MISC; see `task-*_channels.json` and the section
-  "Channel types of depth contacts on scalp slots" below). Units: volts
-  for SEEG/EEG/ECG (MISC left `n/a`). The release's own code (`code/dre-lzsh-release/1f code`) reads the Nihon Kohden
-  EDFs with MNE (`raw.get_data()`, volts), and its per-channel PSD tables (`derivatives/dre-lzsh-results/1f -results`)
-  agree with the stored values in scale. Per-participant median band-power ratio (stored / table): 0.80-2.03 for the
-  interictal runs (all six bands within 0.5-2 for 28 of 29 participants) and 0.0008-4.5 for the ictal runs (22 of 29;
-  not P004, P007, P013, P014, P018, P020, P025). Values in µV would give ratios of about 1e12.
+  inferred from the names (SEEG, EEG for the scalp channels, ECG, MISC; see `task-*_channels.json`). Units are not
+  stated (`n/a`); the magnitudes are consistent with volts.
 - The release stores three MATLAB layouts: `eeg_data` with an MNE-style `info` struct, `data` with `ch_names`, and `data`
   with `channel_names` and a channel count. All three are read as stored. Each segment became one BrainVision run (IEEE
   float32: the stored float64 values rounded to float32), and the round-trip check compares every run with its source.
@@ -48,11 +43,15 @@ not mapped onto `channels.tsv`.
   change is that the MATLAB header text "Created on" (file export date, April and June 2025) has its weekday and day
   masked. The provenance JSON gives the SHA-256 of each file before and after masking.
 
+## License
+
+CC-BY-4.0
+
 ## Channel types of depth contacts on scalp slots (corrected in fix-20261030, Oct 2026)
 
 Up to version 1.0.2, every `EEG <name>-Ref` channel was typed EEG and every `POL E<n>` channel MISC. In the released
 channel lists many of them are SEEG depth contacts that the Nihon Kohden export placed on its scalp/system input slots:
-the shaft numbering continues across the two name forms within the same file. They are now typed SEEG (1,914 rows in
+the shaft numbering continues across the two name forms within the same file. They are now typed SEEG (2,008 rows in
 106 `channels.tsv`; the SEEG/EEG/MISC counts in the matching `*_ieeg.json` were updated):
 - `EEG A1-Ref`, `EEG A2-Ref` followed by `POL A3` ... (A shaft), `EEG C1-Ref` ... `EEG C6-Ref` followed by `POL C7` ...,
   `EEG F1-Ref` ... `EEG F10-Ref` followed by `POL F11` ..., and in P029 `EEG Tp7-Ref` ... `EEG Tp10-Ref` between
@@ -68,6 +67,3 @@ types follow the names and their numbering in each released file. Every changed 
 The release's EZ and deleted-channel numbers (`participants.tsv`) are not mapped onto `channels.tsv`: as stated above, the
 release does not say which channel order they index, and some exceed the number of channels in a file.
 
-## License
-
-CC-BY-4.0
