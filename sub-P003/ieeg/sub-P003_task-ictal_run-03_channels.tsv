@@ -1,6 +1,6 @@
 name	type	units	low_cutoff	high_cutoff	sampling_frequency	status	status_description
-EEG A1-Ref	EEG	n/a	n/a	n/a	2000.0	n/a	n/a
-EEG A2-Ref	EEG	n/a	n/a	n/a	2000.0	n/a	n/a
+EEG A1-Ref	SEEG	n/a	n/a	n/a	2000.0	n/a	n/a
+EEG A2-Ref	SEEG	n/a	n/a	n/a	2000.0	n/a	n/a
 POL A3	SEEG	n/a	n/a	n/a	2000.0	n/a	n/a
 POL A4	SEEG	n/a	n/a	n/a	2000.0	n/a	n/a
 POL A5	SEEG	n/a	n/a	n/a	2000.0	n/a	n/a

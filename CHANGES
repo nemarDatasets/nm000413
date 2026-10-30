@@ -1,3 +1,7 @@
+1.0.3 2026-10-30
+
+  - Type depth contacts on scalp input slots as SEEG
+
 1.0.2 2026-10-16
   - Restore the descriptive Name from v1.0.0 after the v1.0.1 naming regression.
 1.0.0 2026-10-08

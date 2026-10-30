@@ -121,8 +121,8 @@ POL I'5	SEEG	n/a	n/a	n/a	2000.0000000000002	n/a	n/a
 POL I'6	SEEG	n/a	n/a	n/a	2000.0000000000002	n/a	n/a
 POL I'7	SEEG	n/a	n/a	n/a	2000.0000000000002	n/a	n/a
 POL I'8	SEEG	n/a	n/a	n/a	2000.0000000000002	n/a	n/a
-EEG A1-Ref	EEG	n/a	n/a	n/a	2000.0000000000002	n/a	n/a
-EEG A2-Ref	EEG	n/a	n/a	n/a	2000.0000000000002	n/a	n/a
+EEG A1-Ref	SEEG	n/a	n/a	n/a	2000.0000000000002	n/a	n/a
+EEG A2-Ref	SEEG	n/a	n/a	n/a	2000.0000000000002	n/a	n/a
 POL A3	SEEG	n/a	n/a	n/a	2000.0000000000002	n/a	n/a
 POL A4	SEEG	n/a	n/a	n/a	2000.0000000000002	n/a	n/a
 POL A5	SEEG	n/a	n/a	n/a	2000.0000000000002	n/a	n/a

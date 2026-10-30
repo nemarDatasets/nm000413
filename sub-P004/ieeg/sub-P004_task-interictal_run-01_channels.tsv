@@ -59,8 +59,8 @@ POL E'13	SEEG	n/a	n/a	n/a	2000.0	n/a	n/a
 POL E'14	SEEG	n/a	n/a	n/a	2000.0	n/a	n/a
 POL E'15	SEEG	n/a	n/a	n/a	2000.0	n/a	n/a
 POL E'16	SEEG	n/a	n/a	n/a	2000.0	n/a	n/a
-EEG A1-Ref	EEG	n/a	n/a	n/a	2000.0	n/a	n/a
-EEG A2-Ref	EEG	n/a	n/a	n/a	2000.0	n/a	n/a
+EEG A1-Ref	SEEG	n/a	n/a	n/a	2000.0	n/a	n/a
+EEG A2-Ref	SEEG	n/a	n/a	n/a	2000.0	n/a	n/a
 POL A3	SEEG	n/a	n/a	n/a	2000.0	n/a	n/a
 POL A4	SEEG	n/a	n/a	n/a	2000.0	n/a	n/a
 POL A5	SEEG	n/a	n/a	n/a	2000.0	n/a	n/a
