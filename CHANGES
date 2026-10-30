@@ -1,3 +1,6 @@
+1.0.3 2026-10-30
+  - README section 'Units': units stay n/a, as no release file, table or script states a unit; the stored values are
+    compared with the release's PSD tables as band-power ratios (receipt in code/receipts).
 1.0.2 2026-10-16
   - Restore the descriptive Name from v1.0.0 after the v1.0.1 naming regression.
 1.0.0 2026-10-08

@@ -43,6 +43,16 @@ not mapped onto `channels.tsv`.
   change is that the MATLAB header text "Created on" (file export date, April and June 2025) has its weekday and day
   masked. The provenance JSON gives the SHA-256 of each file before and after masking.
 
+## Units (version 1.0.3)
+
+Units stay `n/a`: no `.mat` file, table or script of the release gives a unit, scale or gain. The release's per-channel
+PSD tables (`derivatives/dre-lzsh-results/1f -results`), which its notebook (`code/dre-lzsh-release/1f code`) computes
+from the Nihon Kohden EDFs read with MNE `read_raw_edf` and `get_data`, were compared with the same band powers of the
+stored values. Per-participant median band-power ratio (stored / table): 0.80-2.03 for the interictal runs (all six
+bands within 0.5-2 for 28 of 29 participants) and 0.0008-4.5 for the ictal runs (22 of 29; not P004, P007, P013, P014,
+P018, P020, P025), whose tables come from filtered segments cropped at limits that are not released. Receipt:
+`code/receipts/2026-10-30_units-na.md`.
+
 ## License
 
 CC-BY-4.0
